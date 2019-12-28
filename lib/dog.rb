@@ -34,4 +34,9 @@ class Dog
       SQL
       DB[:conn].execute(sql)
   end
+
+  def update 
+    sql = "UPDATE dogs WHERE name = ?, breed = ?"
+    DB[:conn].execute(sql, self.name, self.breed)
+  end
 end
