@@ -27,7 +27,7 @@ class Dog
     if self.id
       self.update
     else
-      dog = <<-SQL
+      new_dog = <<-SQL
         INSERT INTO dogs (name, breed)
         VALUES (?, ?)
       SQL
@@ -37,9 +37,7 @@ class Dog
   end
 
   def update
-    sql = <<-SQL
-    UPDATE dogs SET name = ?, breed = ? WHERE id = ?
-    SQL
+    sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
     DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
 end
