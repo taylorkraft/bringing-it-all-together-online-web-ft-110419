@@ -3,7 +3,7 @@ class Dog
 
   def initialize(attr)
     @id = id
-    @name = name 
+    @name = name
     @breed = breed
   end
 
