@@ -31,6 +31,7 @@ class Dog
       INSERT INTO dogs WHERE name = ?, breed = ?
       SQL
       DB[:conn].execute(sql)
+    end
   end
 
   def update
